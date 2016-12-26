@@ -13,12 +13,12 @@ public class CourseService {
 	@Autowired
 	CourseRepository courseRepository;
 	
-	private List<Course> topics = new ArrayList<>(Arrays.asList(
+	/*private List<Course> topics = new ArrayList<>(Arrays.asList(
 			new Course("1", "2", "3"),
 			new Course("2", "2", "3"),
 			new Course("3", "2", "3"),
-			new Course("5", "6", "7")));
-	
+			new Course("5", "6", "7")));*/
+		
 	public List<Course> getAllCourses(){	
 		//return topics;
 		
@@ -33,12 +33,12 @@ public class CourseService {
 		return courseRepository.findOne(id);
 	}
 
-	public void addCourse(Course topic) {
+	public void addCourse(Course course) {
 		//topics.add(topic);
-		courseRepository.save(topic);
+		courseRepository.save(course);
 	}
 	
-	public void updateCourse(Course topic, String id) {
+	public void updateCourse(Course course) {
 		
 		/*for(int i=0;i<topics.size();i++){
 			Topic t = topics.get(i);
@@ -46,7 +46,7 @@ public class CourseService {
 				topics.set(i, topic);
 			}
 		}*/
-		courseRepository.save(topic);
+		courseRepository.save(course);
 	}
 
 	public void deleteCourse(String id) {

@@ -3,6 +3,8 @@ package com.amit.javabrains.course;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import com.amit.javabrains.topic.Topic;
+
 @Entity
 public class Course {
 	
@@ -10,16 +12,18 @@ public class Course {
 	private String id;
 	private String name;
 	private String description;
+	private Topic topic;
 	
 	public Course(){
 		
 	}
 	
-	public Course(String id, String name, String description) {
+	public Course(String id, String name, String description, String topicId) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
+		this.topic = new Topic(topicId, "", "");
 	}
 
 	public String getId() {
@@ -32,6 +36,14 @@ public class Course {
 	public String getName() {
 		return name;
 	}
+	public Topic getTopic() {
+		return topic;
+	}
+
+	public void setTopic(Topic topic) {
+		this.topic = topic;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
