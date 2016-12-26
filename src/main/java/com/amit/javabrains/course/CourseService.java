@@ -19,12 +19,14 @@ public class CourseService {
 			new Course("3", "2", "3"),
 			new Course("5", "6", "7")));*/
 		
-	public List<Course> getAllCourses(){	
+	public List<Course> getAllCourses(String topicId){	
 		//return topics;
 		
-		List<Course> topic = new ArrayList<>();
+		/*List<Course> topic = new ArrayList<>();
 		courseRepository.findAll().forEach(topic::add);
-		return topic;
+		return topic;*/
+		
+		return courseRepository.findByTopicId(topicId);
 	}
 	
 	public Course getCourse(String id){
